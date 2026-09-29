@@ -1,19 +1,20 @@
+```css
 /* =========================================
    PREMIUM WORDPRESS LOGIN
    ========================================= */
 
 :root {
-    --bg: #080807;
-    --surface: rgba(22, 20, 16, 0.88);
-    --surface-2: #12110e;
-    --border: rgba(229, 184, 47, 0.18);
+    --bg: #080807 !important;
+    --surface: rgba(22, 20, 16, 0.88) !important;
+    --surface-2: #12110e !important;
+    --border: rgba(229, 184, 47, 0.18) !important;
 
-    --gold: #e5b82f;
-    --gold-light: #ffd95a;
-    --gold-dark: #9b7a28;
+    --gold: #e5b82f !important;
+    --gold-light: #ffd95a !important;
+    --gold-dark: #9b7a28 !important;
 
-    --text: #f5f0e5;
-    --muted: #9d9687;
+    --text: #f5f0e5 !important;
+    --muted: #9d9687 !important;
 }
 
 
@@ -24,6 +25,7 @@
 body.login {
     min-height: 100vh !important;
     margin: 0 !important;
+
     background:
         radial-gradient(
             circle at 50% -10%,
@@ -38,45 +40,57 @@ body.login {
         var(--bg) !important;
 
     color: var(--text) !important;
-    font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI",
+
+    font-family:
+        "Inter",
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
         sans-serif !important;
 
-    overflow-x: hidden;
+    overflow-x: hidden !important;
 }
 
 
-/* Animated background glow */
+/* =========================================
+   ANIMATED BACKGROUND
+   ========================================= */
 
 body.login::before {
-    content: "";
-    position: fixed;
-    width: 600px;
-    height: 600px;
+    content: "" !important;
 
-    top: -300px;
-    left: 50%;
+    position: fixed !important;
 
-    transform: translateX(-50%);
+    width: 600px !important;
+    height: 600px !important;
 
-    background: rgba(229, 184, 47, 0.10);
+    top: -300px !important;
+    left: 50% !important;
 
-    filter: blur(120px);
-    border-radius: 50%;
+    transform: translateX(-50%) !important;
 
-    pointer-events: none;
+    background: rgba(229, 184, 47, 0.10) !important;
 
-    animation: glowMove 8s ease-in-out infinite alternate;
+    filter: blur(120px) !important;
+
+    border-radius: 50% !important;
+
+    pointer-events: none !important;
+
+    animation:
+        glowMove 8s ease-in-out infinite alternate !important;
 }
 
 @keyframes glowMove {
+
     from {
-        transform: translateX(-50%) scale(0.9);
-        opacity: .5;
+        transform: translateX(-50%) scale(.9) !important;
+        opacity: .5 !important;
     }
 
     to {
-        transform: translateX(-50%) scale(1.15);
-        opacity: 1;
+        transform: translateX(-50%) scale(1.15) !important;
+        opacity: 1 !important;
     }
 }
 
@@ -86,26 +100,27 @@ body.login::before {
    ========================================= */
 
 #login {
-    width: 100%;
-    max-width: 440px;
+    width: 100% !important;
+    max-width: 440px !important;
 
-    padding: 30px 20px 50px;
+    padding: 30px 20px 50px !important;
 
-    margin: 0 auto;
+    margin: 0 auto !important;
 
-    animation: loginReveal .8s cubic-bezier(.2,.8,.2,1);
+    animation:
+        loginReveal .8s cubic-bezier(.2,.8,.2,1) !important;
 }
 
 @keyframes loginReveal {
 
     from {
-        opacity: 0;
-        transform: translateY(35px) scale(.97);
+        opacity: 0 !important;
+        transform: translateY(35px) scale(.97) !important;
     }
 
     to {
-        opacity: 1;
-        transform: translateY(0) scale(1);
+        opacity: 1 !important;
+        transform: translateY(0) scale(1) !important;
     }
 }
 
@@ -116,7 +131,7 @@ body.login::before {
 
 .wp-login-logo {
     margin: 0 auto 25px !important;
-    text-align: center;
+    text-align: center !important;
 }
 
 .wp-login-logo a {
@@ -125,27 +140,29 @@ body.login::before {
 
     margin: auto !important;
 
-    display: block;
+    display: block !important;
 
     background-color: var(--gold) !important;
 
     background-size: 48px !important;
 
-    border-radius: 24px;
+    border-radius: 24px !important;
 
     box-shadow:
         0 15px 45px rgba(229,184,47,.18),
-        inset 0 1px 0 rgba(255,255,255,.35);
+        inset 0 1px 0 rgba(255,255,255,.35) !important;
 
-    transition: .4s ease;
+    transition: .4s ease !important;
 }
 
 .wp-login-logo a:hover {
-    transform: translateY(-5px) rotate(-2deg);
+    transform:
+        translateY(-5px)
+        rotate(-2deg) !important;
 
     box-shadow:
         0 20px 55px rgba(229,184,47,.28),
-        0 0 35px rgba(229,184,47,.15);
+        0 0 35px rgba(229,184,47,.15) !important;
 }
 
 
@@ -154,8 +171,7 @@ body.login::before {
    ========================================= */
 
 #loginform {
-
-    position: relative;
+    position: relative !important;
 
     padding: 34px !important;
 
@@ -173,27 +189,27 @@ body.login::before {
 
     box-shadow:
         0 30px 80px rgba(0,0,0,.55),
-        inset 0 1px 0 rgba(255,255,255,.05);
+        inset 0 1px 0 rgba(255,255,255,.05) !important;
 
-    backdrop-filter: blur(25px);
-    -webkit-backdrop-filter: blur(25px);
+    backdrop-filter: blur(25px) !important;
+    -webkit-backdrop-filter: blur(25px) !important;
 
-    overflow: hidden;
+    overflow: hidden !important;
 }
 
 
 /* Gold top line */
 
 #loginform::before {
-    content: "";
+    content: "" !important;
 
-    position: absolute;
+    position: absolute !important;
 
-    top: 0;
-    left: 15%;
+    top: 0 !important;
+    left: 15% !important;
 
-    width: 70%;
-    height: 2px;
+    width: 70% !important;
+    height: 2px !important;
 
     background:
         linear-gradient(
@@ -201,9 +217,9 @@ body.login::before {
             transparent,
             var(--gold),
             transparent
-        );
+        ) !important;
 
-    box-shadow: 0 0 20px var(--gold);
+    box-shadow: 0 0 20px var(--gold) !important;
 }
 
 
@@ -212,55 +228,57 @@ body.login::before {
    ========================================= */
 
 #return-to-pantheon {
-
     display: flex !important;
 
-    align-items: center;
-    justify-content: space-between;
+    align-items: center !important;
+    justify-content: space-between !important;
 
-    gap: 15px;
+    gap: 15px !important;
 
-    padding: 13px 15px;
+    padding: 13px 15px !important;
 
-    margin-bottom: 27px;
+    margin-bottom: 27px !important;
 
-    border-radius: 13px;
+    border-radius: 13px !important;
 
-    background: rgba(229,184,47,.055);
+    background:
+        rgba(229,184,47,.055) !important;
 
-    border: 1px solid rgba(229,184,47,.13);
+    border:
+        1px solid rgba(229,184,47,.13) !important;
 
-    font-size: 12px;
+    font-size: 12px !important;
 }
 
 #return-to-pantheon .left {
-    color: var(--muted);
+    color: var(--muted) !important;
 }
 
 #return-to-pantheon .right a {
+    display: flex !important;
 
-    display: flex;
+    align-items: center !important;
 
-    align-items: center;
-    gap: 7px;
+    gap: 7px !important;
 
     color: var(--gold-light) !important;
 
-    text-decoration: none;
+    text-decoration: none !important;
 
-    font-weight: 600;
+    font-weight: 600 !important;
 
-    transition: .3s ease;
+    transition: .3s ease !important;
 }
 
 #return-to-pantheon .right a:hover {
     color: #fff !important;
-    transform: translateX(3px);
+
+    transform: translateX(3px) !important;
 }
 
 .fist-icon {
-    width: 17px;
-    height: 17px;
+    width: 17px !important;
+    height: 17px !important;
 }
 
 
@@ -269,18 +287,17 @@ body.login::before {
    ========================================= */
 
 #loginform label {
+    display: block !important;
 
-    display: block;
+    margin-bottom: 8px !important;
 
-    margin-bottom: 8px;
+    color: #d8d1c2 !important;
 
-    color: #d8d1c2;
+    font-size: 13px !important;
 
-    font-size: 13px;
+    font-weight: 600 !important;
 
-    font-weight: 600;
-
-    letter-spacing: .2px;
+    letter-spacing: .2px !important;
 }
 
 
@@ -301,9 +318,11 @@ body.login::before {
 
     border-radius: 13px !important;
 
-    border: 1px solid #332e26 !important;
+    border:
+        1px solid #332e26 !important;
 
-    background: rgba(0,0,0,.28) !important;
+    background:
+        rgba(0,0,0,.28) !important;
 
     color: #fff !important;
 
@@ -315,41 +334,41 @@ body.login::before {
         border-color .3s ease,
         box-shadow .3s ease,
         background .3s ease,
-        transform .3s ease;
+        transform .3s ease !important;
 }
 
 
-/* Input focus */
+/* Focus */
 
 #loginform input[type="text"]:focus,
 #loginform input[type="password"]:focus {
 
-    border-color: var(--gold) !important;
+    border-color:
+        var(--gold) !important;
 
-    background: rgba(229,184,47,.035) !important;
+    background:
+        rgba(229,184,47,.035) !important;
 
     box-shadow:
         0 0 0 4px rgba(229,184,47,.08),
-        0 8px 30px rgba(229,184,47,.07);
+        0 8px 30px rgba(229,184,47,.07) !important;
 
-    transform: translateY(-1px);
+    transform:
+        translateY(-1px) !important;
 }
 
 
 /* =========================================
-   PASSWORD AREA
+   PASSWORD
    ========================================= */
 
 .wp-pwd {
-    position: relative;
+    position: relative !important;
 }
 
 .wp-pwd input {
     padding-right: 52px !important;
 }
-
-
-/* Eye button */
 
 .wp-hide-pw {
 
@@ -358,7 +377,8 @@ body.login::before {
     right: 6px !important;
     top: 50% !important;
 
-    transform: translateY(-50%);
+    transform:
+        translateY(-50%) !important;
 
     width: 40px !important;
     height: 40px !important;
@@ -373,13 +393,14 @@ body.login::before {
 
     border-radius: 9px !important;
 
-    transition: .3s ease;
+    transition: .3s ease !important;
 }
 
 .wp-hide-pw:hover {
     color: var(--gold-light) !important;
 
-    background: rgba(229,184,47,.08) !important;
+    background:
+        rgba(229,184,47,.08) !important;
 }
 
 
@@ -388,17 +409,20 @@ body.login::before {
    ========================================= */
 
 .caps-warning {
+
     color: #d7cdbb !important;
 
-    background: rgba(229,184,47,.07) !important;
+    background:
+        rgba(229,184,47,.07) !important;
 
-    border: 1px solid rgba(229,184,47,.13) !important;
+    border:
+        1px solid rgba(229,184,47,.13) !important;
 
-    border-radius: 9px;
+    border-radius: 9px !important;
 
-    padding: 8px 10px;
+    padding: 8px 10px !important;
 
-    margin-top: 8px;
+    margin-top: 8px !important;
 }
 
 
@@ -410,61 +434,67 @@ body.login::before {
 
     display: flex !important;
 
-    align-items: center;
+    align-items: center !important;
 
-    gap: 8px;
+    gap: 8px !important;
 
     margin: 18px 0 !important;
 
-    color: var(--muted);
+    color: var(--muted) !important;
 }
 
 
-/* checkbox */
+/* Checkbox */
 
 #rememberme {
 
-    appearance: none;
+    appearance: none !important;
 
     width: 17px !important;
     height: 17px !important;
 
     margin: 0 !important;
 
-    border-radius: 5px;
+    border-radius: 5px !important;
 
-    border: 1px solid #514936;
+    border:
+        1px solid #514936 !important;
 
-    background: #11100d;
+    background:
+        #11100d !important;
 
-    cursor: pointer;
+    cursor: pointer !important;
 
-    position: relative;
+    position: relative !important;
 }
 
 #rememberme:checked {
-    background: var(--gold);
 
-    border-color: var(--gold);
+    background:
+        var(--gold) !important;
+
+    border-color:
+        var(--gold) !important;
 }
 
 #rememberme:checked::after {
 
-    content: "✓";
+    content: "✓" !important;
 
-    position: absolute;
+    position: absolute !important;
 
-    inset: 0;
+    inset: 0 !important;
 
-    display: flex;
+    display: flex !important;
 
-    align-items: center;
-    justify-content: center;
+    align-items: center !important;
+    justify-content: center !important;
 
-    color: #17140d;
+    color: #17140d !important;
 
-    font-size: 12px;
-    font-weight: 900;
+    font-size: 12px !important;
+
+    font-weight: 900 !important;
 }
 
 
@@ -496,31 +526,34 @@ body.login::before {
 
     font-weight: 800 !important;
 
-    letter-spacing: .3px;
+    letter-spacing: .3px !important;
 
-    cursor: pointer;
+    cursor: pointer !important;
 
     box-shadow:
-        0 10px 30px rgba(229,184,47,.18);
+        0 10px 30px rgba(229,184,47,.18) !important;
 
     transition:
         transform .3s ease,
         box-shadow .3s ease,
-        filter .3s ease;
+        filter .3s ease !important;
 }
 
 #wp-submit:hover {
 
-    transform: translateY(-3px);
+    transform:
+        translateY(-3px) !important;
 
-    filter: brightness(1.08);
+    filter:
+        brightness(1.08) !important;
 
     box-shadow:
-        0 15px 40px rgba(229,184,47,.30);
+        0 15px 40px rgba(229,184,47,.30) !important;
 }
 
 #wp-submit:active {
-    transform: translateY(0);
+    transform:
+        translateY(0) !important;
 }
 
 
@@ -535,38 +568,48 @@ body.login::before {
     margin: 18px 0 0 !important;
 
     padding: 0 !important;
+
+    width: 100% !important;
 }
 
 #nav a {
 
-    display: inline-flex;
+    display: inline-flex !important;
 
-    align-items: center;
-    justify-content: center;
+    align-items: center !important;
 
-    padding: 10px 16px;
+    justify-content: center !important;
+
+    padding: 10px 16px !important;
+
+    margin: 0 !important;
 
     color: #aaa18f !important;
 
-    font-size: 13px;
+    font-size: 13px !important;
+
+    line-height: 1.4 !important;
 
     text-decoration: none !important;
 
-    border-radius: 9px;
+    border-radius: 9px !important;
 
     transition:
         color .3s ease,
         background .3s ease,
-        transform .3s ease;
+        transform .3s ease !important;
 }
 
 #nav a:hover {
 
-    color: var(--gold-light) !important;
+    color:
+        var(--gold-light) !important;
 
-    background: rgba(229,184,47,.06);
+    background:
+        rgba(229,184,47,.06) !important;
 
-    transform: translateY(-1px);
+    transform:
+        translateY(-1px) !important;
 }
 
 
@@ -576,7 +619,7 @@ body.login::before {
 
 #backtoblog {
 
-    text-align: center;
+    text-align: center !important;
 
     margin: 22px 0 0 !important;
 }
@@ -585,60 +628,110 @@ body.login::before {
 
     color: #777062 !important;
 
-    font-size: 12px;
+    font-size: 12px !important;
 
-    text-decoration: none;
+    text-decoration: none !important;
 
-    transition: .3s ease;
+    transition: .3s ease !important;
 }
 
 #backtoblog a:hover {
-    color: var(--gold-light) !important;
+
+    color:
+        var(--gold-light) !important;
 }
 
 
 /* =========================================
-   HOVER SHINE EFFECT
+   HOVER SHINE
    ========================================= */
 
 #loginform::after {
 
-    content: "";
+    content: "" !important;
 
-    position: absolute;
+    position: absolute !important;
 
-    top: -100%;
-    left: -70%;
+    top: -100% !important;
+    left: -70% !important;
 
-    width: 40%;
-    height: 300%;
+    width: 40% !important;
+    height: 300% !important;
 
-    background: linear-gradient(
-        90deg,
-        transparent,
-        rgba(255,255,255,.035),
-        transparent
-    );
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(255,255,255,.035),
+            transparent
+        ) !important;
 
-    transform: rotate(20deg);
+    transform:
+        rotate(20deg) !important;
 
-    pointer-events: none;
+    pointer-events: none !important;
 
-    transition: .8s ease;
+    transition: .8s ease !important;
 }
 
 #loginform:hover::after {
-    left: 130%;
+    left: 130% !important;
 }
 
 
 /* =========================================
-   REMOVE DEFAULT WORDPRESS EFFECTS
+   REMOVE WP DEFAULT
    ========================================= */
 
 #loginform .button-primary:active,
 #loginform .button-primary:focus {
+
     box-shadow: none !important;
+}
+
+
+/* =========================================
+   STAGGERED ANIMATION
+   ========================================= */
+
+#loginform > p,
+#loginform > div {
+
+    animation:
+        fieldReveal .6s both !important;
+}
+
+#loginform > div:nth-child(1) {
+    animation-delay: .15s !important;
+}
+
+#loginform > p:nth-of-type(1) {
+    animation-delay: .25s !important;
+}
+
+#loginform > div:nth-of-type(2) {
+    animation-delay: .35s !important;
+}
+
+#loginform > p:nth-of-type(2) {
+    animation-delay: .45s !important;
+}
+
+#loginform > p.submit {
+    animation-delay: .55s !important;
+}
+
+@keyframes fieldReveal {
+
+    from {
+        opacity: 0 !important;
+        transform: translateY(12px) !important;
+    }
+
+    to {
+        opacity: 1 !important;
+        transform: translateY(0) !important;
+    }
 }
 
 
@@ -658,21 +751,29 @@ body.login::before {
 
     #loginform {
 
-        padding: 25px 20px !important;
+        padding:
+            25px 20px !important;
 
-        border-radius: 20px !important;
+        border-radius:
+            20px !important;
     }
 
     #return-to-pantheon {
 
-        flex-direction: column;
+        flex-direction:
+            column !important;
 
-        align-items: flex-start;
+        align-items:
+            flex-start !important;
     }
 
     .wp-login-logo a {
 
-        width: 70px !important;
-        height: 70px !important;
+        width:
+            70px !important;
+
+        height:
+            70px !important;
     }
 }
+```
