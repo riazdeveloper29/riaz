@@ -1,0 +1,678 @@
+/* =========================================
+   PREMIUM WORDPRESS LOGIN
+   ========================================= */
+
+:root {
+    --bg: #080807;
+    --surface: rgba(22, 20, 16, 0.88);
+    --surface-2: #12110e;
+    --border: rgba(229, 184, 47, 0.18);
+
+    --gold: #e5b82f;
+    --gold-light: #ffd95a;
+    --gold-dark: #9b7a28;
+
+    --text: #f5f0e5;
+    --muted: #9d9687;
+}
+
+
+/* =========================================
+   BODY
+   ========================================= */
+
+body.login {
+    min-height: 100vh !important;
+    margin: 0 !important;
+    background:
+        radial-gradient(
+            circle at 50% -10%,
+            rgba(229, 184, 47, 0.14),
+            transparent 38%
+        ),
+        radial-gradient(
+            circle at 10% 90%,
+            rgba(229, 184, 47, 0.06),
+            transparent 35%
+        ),
+        var(--bg) !important;
+
+    color: var(--text) !important;
+    font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI",
+        sans-serif !important;
+
+    overflow-x: hidden;
+}
+
+
+/* Animated background glow */
+
+body.login::before {
+    content: "";
+    position: fixed;
+    width: 600px;
+    height: 600px;
+
+    top: -300px;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    background: rgba(229, 184, 47, 0.10);
+
+    filter: blur(120px);
+    border-radius: 50%;
+
+    pointer-events: none;
+
+    animation: glowMove 8s ease-in-out infinite alternate;
+}
+
+@keyframes glowMove {
+    from {
+        transform: translateX(-50%) scale(0.9);
+        opacity: .5;
+    }
+
+    to {
+        transform: translateX(-50%) scale(1.15);
+        opacity: 1;
+    }
+}
+
+
+/* =========================================
+   LOGIN CONTAINER
+   ========================================= */
+
+#login {
+    width: 100%;
+    max-width: 440px;
+
+    padding: 30px 20px 50px;
+
+    margin: 0 auto;
+
+    animation: loginReveal .8s cubic-bezier(.2,.8,.2,1);
+}
+
+@keyframes loginReveal {
+
+    from {
+        opacity: 0;
+        transform: translateY(35px) scale(.97);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+
+/* =========================================
+   WORDPRESS LOGO
+   ========================================= */
+
+.wp-login-logo {
+    margin: 0 auto 25px !important;
+    text-align: center;
+}
+
+.wp-login-logo a {
+    width: 84px !important;
+    height: 84px !important;
+
+    margin: auto !important;
+
+    display: block;
+
+    background-color: var(--gold) !important;
+
+    background-size: 48px !important;
+
+    border-radius: 24px;
+
+    box-shadow:
+        0 15px 45px rgba(229,184,47,.18),
+        inset 0 1px 0 rgba(255,255,255,.35);
+
+    transition: .4s ease;
+}
+
+.wp-login-logo a:hover {
+    transform: translateY(-5px) rotate(-2deg);
+
+    box-shadow:
+        0 20px 55px rgba(229,184,47,.28),
+        0 0 35px rgba(229,184,47,.15);
+}
+
+
+/* =========================================
+   LOGIN FORM CARD
+   ========================================= */
+
+#loginform {
+
+    position: relative;
+
+    padding: 34px !important;
+
+    border-radius: 24px !important;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,.045),
+            rgba(255,255,255,.015)
+        ),
+        var(--surface) !important;
+
+    border: 1px solid var(--border) !important;
+
+    box-shadow:
+        0 30px 80px rgba(0,0,0,.55),
+        inset 0 1px 0 rgba(255,255,255,.05);
+
+    backdrop-filter: blur(25px);
+    -webkit-backdrop-filter: blur(25px);
+
+    overflow: hidden;
+}
+
+
+/* Gold top line */
+
+#loginform::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 15%;
+
+    width: 70%;
+    height: 2px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            var(--gold),
+            transparent
+        );
+
+    box-shadow: 0 0 20px var(--gold);
+}
+
+
+/* =========================================
+   PANTHEON BAR
+   ========================================= */
+
+#return-to-pantheon {
+
+    display: flex !important;
+
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 15px;
+
+    padding: 13px 15px;
+
+    margin-bottom: 27px;
+
+    border-radius: 13px;
+
+    background: rgba(229,184,47,.055);
+
+    border: 1px solid rgba(229,184,47,.13);
+
+    font-size: 12px;
+}
+
+#return-to-pantheon .left {
+    color: var(--muted);
+}
+
+#return-to-pantheon .right a {
+
+    display: flex;
+
+    align-items: center;
+    gap: 7px;
+
+    color: var(--gold-light) !important;
+
+    text-decoration: none;
+
+    font-weight: 600;
+
+    transition: .3s ease;
+}
+
+#return-to-pantheon .right a:hover {
+    color: #fff !important;
+    transform: translateX(3px);
+}
+
+.fist-icon {
+    width: 17px;
+    height: 17px;
+}
+
+
+/* =========================================
+   LABELS
+   ========================================= */
+
+#loginform label {
+
+    display: block;
+
+    margin-bottom: 8px;
+
+    color: #d8d1c2;
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    letter-spacing: .2px;
+}
+
+
+/* =========================================
+   INPUTS
+   ========================================= */
+
+#loginform input[type="text"],
+#loginform input[type="password"] {
+
+    width: 100% !important;
+
+    height: 52px !important;
+
+    padding: 0 16px !important;
+
+    box-sizing: border-box !important;
+
+    border-radius: 13px !important;
+
+    border: 1px solid #332e26 !important;
+
+    background: rgba(0,0,0,.28) !important;
+
+    color: #fff !important;
+
+    font-size: 14px !important;
+
+    outline: none !important;
+
+    transition:
+        border-color .3s ease,
+        box-shadow .3s ease,
+        background .3s ease,
+        transform .3s ease;
+}
+
+
+/* Input focus */
+
+#loginform input[type="text"]:focus,
+#loginform input[type="password"]:focus {
+
+    border-color: var(--gold) !important;
+
+    background: rgba(229,184,47,.035) !important;
+
+    box-shadow:
+        0 0 0 4px rgba(229,184,47,.08),
+        0 8px 30px rgba(229,184,47,.07);
+
+    transform: translateY(-1px);
+}
+
+
+/* =========================================
+   PASSWORD AREA
+   ========================================= */
+
+.wp-pwd {
+    position: relative;
+}
+
+.wp-pwd input {
+    padding-right: 52px !important;
+}
+
+
+/* Eye button */
+
+.wp-hide-pw {
+
+    position: absolute !important;
+
+    right: 6px !important;
+    top: 50% !important;
+
+    transform: translateY(-50%);
+
+    width: 40px !important;
+    height: 40px !important;
+
+    padding: 0 !important;
+
+    border: 0 !important;
+
+    background: transparent !important;
+
+    color: #8c8577 !important;
+
+    border-radius: 9px !important;
+
+    transition: .3s ease;
+}
+
+.wp-hide-pw:hover {
+    color: var(--gold-light) !important;
+
+    background: rgba(229,184,47,.08) !important;
+}
+
+
+/* =========================================
+   CAPS LOCK
+   ========================================= */
+
+.caps-warning {
+    color: #d7cdbb !important;
+
+    background: rgba(229,184,47,.07) !important;
+
+    border: 1px solid rgba(229,184,47,.13) !important;
+
+    border-radius: 9px;
+
+    padding: 8px 10px;
+
+    margin-top: 8px;
+}
+
+
+/* =========================================
+   REMEMBER ME
+   ========================================= */
+
+.forgetmenot {
+
+    display: flex !important;
+
+    align-items: center;
+
+    gap: 8px;
+
+    margin: 18px 0 !important;
+
+    color: var(--muted);
+}
+
+
+/* checkbox */
+
+#rememberme {
+
+    appearance: none;
+
+    width: 17px !important;
+    height: 17px !important;
+
+    margin: 0 !important;
+
+    border-radius: 5px;
+
+    border: 1px solid #514936;
+
+    background: #11100d;
+
+    cursor: pointer;
+
+    position: relative;
+}
+
+#rememberme:checked {
+    background: var(--gold);
+
+    border-color: var(--gold);
+}
+
+#rememberme:checked::after {
+
+    content: "✓";
+
+    position: absolute;
+
+    inset: 0;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    color: #17140d;
+
+    font-size: 12px;
+    font-weight: 900;
+}
+
+
+/* =========================================
+   LOGIN BUTTON
+   ========================================= */
+
+#wp-submit {
+
+    width: 100% !important;
+
+    height: 54px !important;
+
+    border: 0 !important;
+
+    border-radius: 13px !important;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--gold-light),
+            var(--gold),
+            var(--gold-dark)
+        ) !important;
+
+    color: #17140d !important;
+
+    font-size: 14px !important;
+
+    font-weight: 800 !important;
+
+    letter-spacing: .3px;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 10px 30px rgba(229,184,47,.18);
+
+    transition:
+        transform .3s ease,
+        box-shadow .3s ease,
+        filter .3s ease;
+}
+
+#wp-submit:hover {
+
+    transform: translateY(-3px);
+
+    filter: brightness(1.08);
+
+    box-shadow:
+        0 15px 40px rgba(229,184,47,.30);
+}
+
+#wp-submit:active {
+    transform: translateY(0);
+}
+
+
+/* =========================================
+   LOST PASSWORD
+   ========================================= */
+
+#nav {
+
+    text-align: center !important;
+
+    margin: 18px 0 0 !important;
+
+    padding: 0 !important;
+}
+
+#nav a {
+
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 10px 16px;
+
+    color: #aaa18f !important;
+
+    font-size: 13px;
+
+    text-decoration: none !important;
+
+    border-radius: 9px;
+
+    transition:
+        color .3s ease,
+        background .3s ease,
+        transform .3s ease;
+}
+
+#nav a:hover {
+
+    color: var(--gold-light) !important;
+
+    background: rgba(229,184,47,.06);
+
+    transform: translateY(-1px);
+}
+
+
+/* =========================================
+   BACK TO SITE
+   ========================================= */
+
+#backtoblog {
+
+    text-align: center;
+
+    margin: 22px 0 0 !important;
+}
+
+#backtoblog a {
+
+    color: #777062 !important;
+
+    font-size: 12px;
+
+    text-decoration: none;
+
+    transition: .3s ease;
+}
+
+#backtoblog a:hover {
+    color: var(--gold-light) !important;
+}
+
+
+/* =========================================
+   HOVER SHINE EFFECT
+   ========================================= */
+
+#loginform::after {
+
+    content: "";
+
+    position: absolute;
+
+    top: -100%;
+    left: -70%;
+
+    width: 40%;
+    height: 300%;
+
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255,255,255,.035),
+        transparent
+    );
+
+    transform: rotate(20deg);
+
+    pointer-events: none;
+
+    transition: .8s ease;
+}
+
+#loginform:hover::after {
+    left: 130%;
+}
+
+
+/* =========================================
+   REMOVE DEFAULT WORDPRESS EFFECTS
+   ========================================= */
+
+#loginform .button-primary:active,
+#loginform .button-primary:focus {
+    box-shadow: none !important;
+}
+
+
+/* =========================================
+   MOBILE
+   ========================================= */
+
+@media (max-width: 480px) {
+
+    #login {
+
+        width: 100% !important;
+
+        padding:
+            25px 15px 40px !important;
+    }
+
+    #loginform {
+
+        padding: 25px 20px !important;
+
+        border-radius: 20px !important;
+    }
+
+    #return-to-pantheon {
+
+        flex-direction: column;
+
+        align-items: flex-start;
+    }
+
+    .wp-login-logo a {
+
+        width: 70px !important;
+        height: 70px !important;
+    }
+}
